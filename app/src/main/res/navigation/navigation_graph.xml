@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/firstFragment">
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.appnavigation.FirstFragment"
+        android:label="navigation_first_fragment"
+        tools:layout="@layout/navigation_first_fragment">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="obj"
+            app:argType="com.example.appnavigation.Produto" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.appnavigation.SecondFragment"
+        android:label="navigation_second_fragment"
+        tools:layout="@layout/navigation_second_fragment" >
+        <action
+            android:id="@+id/action_secondFragment_to_threeFragment"
+            app:destination="@id/threeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/threeFragment"
+        android:name="com.example.appnavigation.ThreeFragment"
+        android:label="ThreeFragment"
+        tools:layout="@layout/navigation_three_fragment">
+        <action
+            android:id="@+id/action_threeFragment_to_fourActivity"
+            app:destination="@id/fourActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/fourActivity"
+        android:name="com.example.appnavigation.FourActivity"
+        android:label="activity_four"
+        tools:layout="@layout/activity_four" />
+</navigation>
